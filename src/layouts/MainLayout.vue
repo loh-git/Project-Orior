@@ -6,16 +6,12 @@
           flat
           dense
           round
-          icon="menu"
+          icon="la la-bars"
           aria-label="Menu"
           @click="leftDrawerOpen = !leftDrawerOpen"
         />
 
-        <q-toolbar-title>
-          Quasar App
-        </q-toolbar-title>
-
-        <div>Quasar v{{ $q.version }}</div>
+        
       </q-toolbar>
     </q-header>
 
@@ -30,7 +26,7 @@
           header
           class="text-grey-8"
         >
-          Essential Links
+          Navigation
         </q-item-label>
         <EssentialLink
           v-for="link in essentialLinks"
@@ -51,46 +47,40 @@ import EssentialLink from 'components/EssentialLink.vue'
 
 const linksData = [
   {
-    title: 'Docs',
-    caption: 'quasar.dev',
-    icon: 'school',
-    link: 'https://quasar.dev'
+    title: 'Home',
+    caption: '',
+    icon: 'la la-home',
+    link: '#'
   },
   {
-    title: 'Github',
-    caption: 'github.com/quasarframework',
-    icon: 'code',
-    link: 'https://github.com/quasarframework'
+    title: 'About Me',
+    caption: '',
+    icon: 'las la-portrait',
+    link: '#'
   },
   {
-    title: 'Discord Chat Channel',
-    caption: 'chat.quasar.dev',
-    icon: 'chat',
-    link: 'https://chat.quasar.dev'
+    title: 'Skills',
+    caption: '',
+    icon: 'las la-code',
+    link: '#'
   },
   {
-    title: 'Forum',
-    caption: 'forum.quasar.dev',
-    icon: 'record_voice_over',
-    link: 'https://forum.quasar.dev'
+    title: 'Projects',
+    caption: '',
+    icon: 'las la-folder-open',
+    link: '#'
   },
   {
-    title: 'Twitter',
-    caption: '@quasarframework',
-    icon: 'rss_feed',
-    link: 'https://twitter.quasar.dev'
+    title: 'LinkedIn',
+    caption: 'https://linkedin.com/in/loh',
+    icon: 'lab la-linkedin-in',
+    link: 'https://linkedin.com/in/loh'
   },
   {
-    title: 'Facebook',
-    caption: '@QuasarFramework',
-    icon: 'public',
-    link: 'https://facebook.quasar.dev'
-  },
-  {
-    title: 'Quasar Awesome',
-    caption: 'Community Quasar projects',
-    icon: 'favorite',
-    link: 'https://awesome.quasar.dev'
+    title: 'GitHub',
+    caption: 'https://github.com/loh-git',
+    icon: 'lab la-github',
+    link: 'https://github.com/loh-git'
   }
 ];
 

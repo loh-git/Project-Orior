@@ -1,24 +1,21 @@
 <template>
-  <q-layout view="lHh Lpr lFf">
-    <q-header elevated>
-      <q-toolbar>
-        <q-btn
-          flat
-          dense
-          round
-          icon="la la-bars"
-          aria-label="Menu"
-          @click="leftDrawerOpen = !leftDrawerOpen"
-        />
+  <q-layout view="hHr Lpr fFr">
 
-        
+    <q-header class="bg-primary text-white" reveal>
+      <q-toolbar>
+        <q-toolbar-title>
+          <q-avatar>
+            <img src="~/assets/logo.png" style="height: 1.5em; width: 2em;"/>
+          </q-avatar>
+        </q-toolbar-title>
+        <q-btn dense flat round icon="la la-bars" @click="right = !right" />
       </q-toolbar>
     </q-header>
 
     <q-drawer
-      v-model="leftDrawerOpen"
-      show-if-above
-      bordered
+      v-model="right"
+      side="right"
+      overlay
       content-class="bg-grey-1"
     >
       <q-list>
@@ -26,7 +23,7 @@
           header
           class="text-grey-8"
         >
-          Navigation
+          Menu
         </q-item-label>
         <EssentialLink
           v-for="link in essentialLinks"
@@ -35,10 +32,14 @@
         />
       </q-list>
     </q-drawer>
-
     <q-page-container>
-      <router-view />
+            <router-view />
+        
     </q-page-container>
+    
+    
+
+    
   </q-layout>
 </template>
 
@@ -83,13 +84,12 @@ const linksData = [
     link: 'https://github.com/loh-git'
   }
 ];
-
 export default {
-  name: 'MainLayout',
+  name: "MainLayout",
   components: { EssentialLink },
   data () {
     return {
-      leftDrawerOpen: false,
+      right: false,
       essentialLinks: linksData
     }
   }
